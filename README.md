@@ -16,6 +16,11 @@ N number of samples is determined by sweep bandwith rise time and sampling frequ
 For example:
 
   If sampling freq = 500KSamples/sec and sweep rise time is 1ms for 200MHz bandwith then in 1 sec system will pack 500 samples   of 16 bit data and transfer 1000 8 bit samples to Python script.
+  
+  
+Python Script: I uploaded a example python script where stationary object are creating peak at some frequencies. I will later add real time plot by simply doing record and plotting with 2 different treads.  
+  
+
 
 ![rf](https://user-images.githubusercontent.com/61315249/81537200-82045480-9375-11ea-87f2-c4e1bb67b51a.png)
 
