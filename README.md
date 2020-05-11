@@ -8,6 +8,9 @@ Board has designed as 2 parts. In this way processing and controlling unit can b
 
 2: Radar MCU Board(I will add FPGA Board later with VHDL files as well)
 
+Both pcbs have 4 layers. 50 Ohm impedance microstrip transmission line is making 0.342mm trace width with below stackup.
+Stackup layer information can be found here: https://docs.oshpark.com/services/four-layer/
+
 STM32F4 has triangular waveform generation option with its DAC and also ADF4158 is used for PLL topology. Either option can be used for waveform generation. Check schematic to populate necessary resistor values to use either mode. ADF4158 can generate pulses with some gap between each sweep. In this way N number of samples are packed and buffered over USB during this gap. 
 Main loop runs with a FSM to check conditions of sweep. ADF4158 Muxout is generating pulse according to the sweep condition. External interrupt tracks this pulse to move between FSM states. 
 
