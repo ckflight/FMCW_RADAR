@@ -13,3 +13,9 @@ MCU Board talks to Python script to configure its hardware so PC is in Host mode
 N number of samples is determined by sweep bandwith rise time and sampling frequency. 
 For example:
   If sampling freq = 500KSamples/sec and sweep rise time is 1ms for 200MHz bandwith then in 1 sec system will pack 500 samples   of 16 bit data and transfer 1000 8 bit samples to Python script.
+
+![rf](https://user-images.githubusercontent.com/61315249/81537200-82045480-9375-11ea-87f2-c4e1bb67b51a.png)
+
+![mcu](https://user-images.githubusercontent.com/61315249/81537194-7f096400-9375-11ea-9049-51c95cfd9812.png)
+
+
