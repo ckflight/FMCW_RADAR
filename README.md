@@ -26,4 +26,6 @@ Python Script: I uploaded a example python script where stationary object are cr
 
 ![mcu](https://user-images.githubusercontent.com/61315249/81537194-7f096400-9375-11ea-9049-51c95cfd9812.png)
 
+![IMG_20200511_111503](https://user-images.githubusercontent.com/61315249/81540098-d14c8400-9379-11ea-9681-371c4e8f2141.jpg)
 
+![IMG_20200511_112710](https://user-images.githubusercontent.com/61315249/81540570-854e0f00-937a-11ea-8197-5f7794a0b7da.jpg)
