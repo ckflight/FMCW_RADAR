@@ -19,7 +19,7 @@ For example:
   If sampling freq = 500KSamples/sec and sweep rise time is 1ms for 200MHz bandwith then in 1 sec system will pack 500 samples   of 16 bit data and transfer 1000 8 bit samples to Python script.
   
   
-Python Script: I uploaded a example python script where stationary objects are creating peak at some frequencies. I will later add real time plot by simply doing record and plotting with 2 different treads simultaneously.  
+Python Script: I have uploaded an example record file along with python scripts where peaks of the stationary objects can be seen. I will later add real time plot by simply doing record and plotting with 2 different treads simultaneously.  
   
 
 
