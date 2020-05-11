@@ -1,0 +1,116 @@
+
++++++++++++++++ORDERED+++++++++++++++++
+
+U2 ,1,"ADF4158","Footprints:LFCSP24_4x4mm_P0.5mm_1EXP_2.5x2.5mm",""
+
+U3 ,1,"SG-210STF","Footprints:Crystal_2.5x2mm",""
+
+U11 ,1,"HMC431LP4","Footprints:QFN24_4x4mm_P0.5mm_1EXP_2.7x2.7mm",""
+
+U16 ,1,"TQP5523","Footprints:QFN20_4x4mm_P0.5mm_1EXP_2.5x2.5mm",""
+
+U14 U19 ,2,"PAT1220-C-6DB","Footprints:PAT1220_6dB",""
+
+U10 ,1,"ADL5801","Footprints:LFCSP24_4x4mm_P0.5mm_1EXP_2.5x2.5mm",""
+
+U13 U6 ,2,"5400BL15B050E","Footprints:Balun_5400BL15B050E",""
+
+U18 ,1,"SKY65404","Footprints:SKY65404_31",""
+
+U15 ,1,"TRF37A73","Footprints:WSON8_2x2mm_P0.5mm_1EXP_0.9x1.6mm",""
+
+L3 ,1,"BLM18PG181SN1D","Footprints:SMD_0603",""
+
+L4 ,1,"LQW15AN9N9J80D","Footprints:SMD_0402",""
+
+U7 ,1,"TLV172","Footprints:SC70_5",""
+
+U1 ,1,"LT6232","Footprints:SSOP16_3.9x4.9mm_P0.635mm",""
+
+U12 ,1,"LDS3985","Footprints:SOT23_5",""
+
+U17 ,1,"MCP1700","Footprints:SOT23_3",""
+
+C70 ,1,"10uF","Footprints:SMD_0402",""
+
+L1 L2 ,2,"2.2uH","Footprints:SMD_0603",""
+
+L5 ,1,"0.6nH","Footprints:SMD_0402",""
+
+J1 ,1,"Connector_02x15","Footprints:PinHeader_2x15_DF12B(5.0)-30DP-0.5V(86)",""
+
+C49 C57 C63 C71 ,4,"2.2uF","Footprints:SMD_0402",""
+
+C68 C59 C15 C16 C18 ,5,"18pF","Footprints:SMD_0402",""
+
+C17 ,1,"2.2nF","Footprints:SMD_0402",""
+
+C26 C19 C20 ,3,"330nF","Footprints:SMD_0402",""
+
+C27 ,1,"2pF","Footprints:SMD_0402",""
+
+C62 C54 C55 C35 C36 C24 C25 ,7,"10pF","Footprints:SMD_0402",""
+
+C73 ,1,"0.5pF","Footprints:SMD_0402",""
+
+C60 C72 ,2,"1000pF","Footprints:SMD_0402",""
+
+***C37 C13 C14 C12 C21 C51 C64 C67 C69 C74 C75 C52 C39 C38 C40 C48 C43 C46 C50 C45 C22 C28 C53 ,23,"100nF","Footprints:SMD_0402","" VAR
+
+***C30 C61 C56 ,3,"10nF","Footprints:SMD_0402","" VAR
+
+***C23 C65 C42 C41 C47 ,5,"100pF","Footprints:SMD_0402","" VAR
+
+***R15 C66 C58 R27 R30 ,5,"DNP","Footprints:SMD_0402",""
+
+***R38 ,1,"100","Footprints:SMD_0402","" VAR
+
+***R9 R10 R34 ,3,"10K","Footprints:SMD_0402","" VAR
+
+***D1 D2 D3 ,3,"Led_Diode","Footprints:Diode_0603","" VAR
+
+***R22 R12 R35 ,3,"0","Footprints:SMD_0402","" VAR
+
+***R24 R23 R26 ,3,"4.7K","Footprints:SMD_0402","" VAR
+
+***R29 R16 R19 R39 R40 R42 R1 ,7,"1K","Footprints:SMD_0402","" VAR
+
+C44 C29 C31 C32 C33 C34 ,6,"470pF","Footprints:SMD_0402",""
+
+R8 ,1,"69.8","Footprints:SMD_0402",""
+
+R11 ,1,"240","Footprints:SMD_0402",""
+
+R13 R14 ,2,"910","Footprints:SMD_0402",""
+
+R6 R5 ,2,"549","Footprints:SMD_0402",""
+
+R7 ,1,"5.49K","Footprints:SMD_0402",""
+
+R37 ,1,"30K","Footprints:SMD_0402",""
+
+R20 R21 ,2,"4.99K","Footprints:SMD_0402",""
+
+R18 R17 ,2,"130","Footprints:SMD_0402",""
+
+R41 R25 R28 ,3,"50","Footprints:SMD_0402",""
+
+R31 R32 R33 ,3,"18","Footprints:SMD_0402",""
+
+***R36 ,1,"0 to 27","Footprints:SMD_0402","" 10 ohm ve 0 ohm var
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,82 @@
+Reference, Quantity, Value, Footprint, Datasheet
+
+C15 C2 C28 C1 ,4,"10uF","Footprints:SMD_0603",""
+
+C19 C20 C17 C16 C11 C5 C29 ,7,"2.2uF","Footprints:SMD_0402",""
+
+C21 C22 ,2,"15pF","Footprints:SMD_0402",""
+
+C25 C38 ,2,"33pF","Footprints:SMD_0402",""
+
+C27 C13 C14 C12 C31 C36 C30 C35 C37 C34 C42 C41 C26 C23 C24 C18 ,16,"100nF","Footprints:SMD_0402",""
+
+C3 C9 C43 C44 C6 ,5,"22uF","Footprints:SMD_0603",""
+
+C33 C32 ,2,"100pF","Footprints:SMD_0402",""
+
+C39 C40 ,2,"1uF","Footprints:SMD_0402",""
+
+C7 C10 C4 ,3,"10nF","Footprints:SMD_0402",""
+
+D1 D2 ,2,"SDM2U30CSP_7","Footprints:Diode_SDM2U30CSP_7",""
+
+D3 D4 D5 ,3,"Led_Diode","Footprints:Diode_0603",""
+
+J1 ,1,"SWD_DEBUGGER","Footprints:PinHeader_1x5_P2.54mm",""
+
+J2 ,1,"Connector_01x02","Footprints:PinHeader_1x2_P2.54mm",""
+
+J3 ,1,"USB_MicroB","Footprints:USB_MicroB_TH",""
+
+J4 ,1,"Connector_02x15","Footprints:PinHeader_2x15_DF12B(5.0)-30DP-0.5V(86)",""
+
+J5 ,1,"GPIO_EXTRA","Footprints:PinHeader_1x5_P2.54mm",""
+
+L1 L2 ,2,"4.7uH","Footprints:SMD_0805",""
+
+Q2 Q1 ,2,"BSS138","Footprints:SOT23_3",""
+
+R1 R2 R16 ,3,"22","Footprints:SMD_0402",""
+
+R15 R19 ,2,"2.49K","Footprints:SMD_0402",""
+
+R17 R24 R28 R29 R7 R8 ,6,"10K","Footprints:SMD_0402",""
+
+R18 R13 R14 R20 R32 R33 R34 ,7,"1K","Footprints:SMD_0402",""
+
+R21 ,1,"49.9","Footprints:SMD_0402",""
+
+R22 R5 R6 ,3,"100","Footprints:SMD_0402",""
+
+R25 R11 R12 ,3,"DNP","Footprints:SMD_0402",""
+
+R26 R9 R10 ,3,"0","Footprints:SMD_0402",""
+
+R3 ,1,"14.7K","Footprints:SMD_0402",""
+
+R30 ,1,"24.4K","Footprints:SMD_0402",""
+
+R4 R27 R23 R31 ,4,"4.7K","Footprints:SMD_0402",""
+
+SW1 ,1,"DFU_Button","Footprints:Button_B3U_1000P",""
+
+SW2 ,1,"Reset_Button","Footprints:Button_B3U_1000P",""
+
+U2 U1 ,2,"AP3211","Footprints:SOT23_6",""
+
+U3 ,1,"LP2985_10","Footprints:SOT23_5",""
+
+U4 ,1,"STM32F405","Footprints:LQFP64_10x10mm_P0.5mm",""
+
+U5 ,1,"IF+","Footprints:SolderPad_1_1.5mm_SMD_Rectangle",""
+
+U6 ,1,"IF-","Footprints:SolderPad_1_1.5mm_SMD_Rectangle",""
+
+U7 ,1,"MCP4022_202","Footprints:SOT23_6",""
+
+U8 ,1,"LT1817","Footprints:SSOP16_3.9x4.9mm_P0.635mm",""
+
+U9 ,1,"MAX1426","Footprints:SSOP28_5.3x10.2mm_P0.65mm",""
+
+Y1 ,1,"8MHz","Footprints:Crystal_3.2x2.5mm",""
+

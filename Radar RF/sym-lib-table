@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name Radar-RF-rescue)(type Legacy)(uri "${KIPRJMOD}/Radar RF-rescue.lib")(options "")(descr ""))
+)
