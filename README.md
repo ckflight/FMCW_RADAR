@@ -1,4 +1,4 @@
-# FMCW-Radar
+# FMCW_RADAR
 
 Frequency Modulated Continuous Wave Radar with 23 dBm output power covering around 250m range with a 10dBi gain patch antenna.
 
