@@ -1,4 +1,5 @@
 # FMCW-Radar
+
 Frequency Modulated Continuous Wave Radar with 23 dBm output power covering around 250m range with a 10dBi gain patch antenna.
 
 Auto gain configuration with digital potantiometer in MCU board. Range compansation filter is implemented as well. IF signal is available at different stage of amplifier and filter circuit for testing with other configurations.
