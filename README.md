@@ -24,11 +24,9 @@ For example:
   
 Python Script: I have uploaded an example record file along with python scripts where peaks of the stationary objects can be seen. I will later add real time plot by simply doing record and plotting with 2 different treads simultaneously.  
   
+![RADAR_RF](https://user-images.githubusercontent.com/61315249/82238636-4acb1000-9940-11ea-8323-65df61ffcf1b.png)
 
-
-![rf radar](https://user-images.githubusercontent.com/61315249/81921159-d7916900-95e2-11ea-806a-1d0e252ad48d.png)
-
-![mcu](https://user-images.githubusercontent.com/61315249/81537194-7f096400-9375-11ea-9049-51c95cfd9812.png)
+![RADAR_MCU](https://user-images.githubusercontent.com/61315249/82238631-47d01f80-9940-11ea-91dd-7cf658414dd1.png)
 
 ![IMG_20200511_111503](https://user-images.githubusercontent.com/61315249/81540098-d14c8400-9379-11ea-9681-371c4e8f2141.jpg)
 
