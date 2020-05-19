@@ -23,7 +23,7 @@ MCU Board talks to Python script to configure its hardware so PC is in Host mode
 N number of samples is determined by sweep bandwith rise time and sampling frequency. 
 For example:
 
-  If sampling freq = 500KSamples/sec and sweep rise time is 1ms for 200MHz bandwith then in 1 millisecond, system will pack 500 samples   of 16 bit data and transfer 1000 8 bit samples to Python script. So 1MByte data per second is needed for 500KHz sampling frequency.
+  If sampling freq = 500KSamples/sec and sweep rise time is 1ms for 200MHz bandwith then system will pack 500(16 bit adc samples) and transfer 1000(8 bit adc samples) to Python script in 1ms. So 1MByte data per second is buffered to Host PC for 500KHz sampling frequency.
   
   
 Python Script: I have uploaded an example record file along with python scripts where peaks of the stationary objects can be seen. I will later add real time plot by simply doing record and plotting with 2 different treads simultaneously.  
