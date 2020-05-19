@@ -1,5 +1,7 @@
 # FMCW_RADAR
 
+Example screenshots are below
+
 Frequency Modulated Continuous Wave Radar with 23 dBm output power covering around 250m range with a 10dBi gain patch antenna.
 
 Auto gain configuration with digital potantiometer in MCU board. Range compansation filter is implemented as well. IF signal is available at different stage of amplifier and filter circuit for testing with other configurations.
@@ -34,6 +36,11 @@ Python Script: I have uploaded an example record file along with python scripts 
 
 ![IMG_20200511_112710](https://user-images.githubusercontent.com/61315249/81540570-854e0f00-937a-11ea-8197-5f7794a0b7da.jpg)
 
+![radar1](https://user-images.githubusercontent.com/61315249/82351876-d8246800-9a05-11ea-9d82-bcc3625c07b5.png)
+
+![radar2](https://user-images.githubusercontent.com/61315249/82351877-d8bcfe80-9a05-11ea-9fe4-1619731c1cea.png)
+
+![radar3](https://user-images.githubusercontent.com/61315249/82351882-d9559500-9a05-11ea-9772-c6e71b53d2af.png)
 
 
 
