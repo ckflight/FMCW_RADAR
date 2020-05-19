@@ -4,7 +4,7 @@ Example screenshots are below
 
 Frequency Modulated Continuous Wave Radar with 26 dBm output power covering around 250m range with a 10dBi gain patch antenna.
 
-Auto gain configuration with digital potantiometer in MCU board. Range compansation filter is implemented as well. IF signal is available at different stage of amplifier and filter circuit for testing with other configurations.
+Auto gain configuration with digital potantiometer in MCU board. -40dB/decade Range compansation filter is implemented as well. IF signal is available at different stage of amplifier and filter circuit for testing with other configurations.
 
 Board has designed as 2 parts. In this way processing and controlling unit can be redesigned with FPGA or any other option:
 
