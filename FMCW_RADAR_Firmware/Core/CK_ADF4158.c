@@ -88,7 +88,7 @@ void CK_ADF4158_Init(WAVEFORM_TYPE wf){
 
 	float sweep_t = (float)CK_CONFIGURATION_GetSweepTime() / 1000000.0f;
 	float sweep_g  = (float)CK_CONFIGURATION_GetSweepGap() / 1000000.0f;
-	sweep_period = sweep_t + sweep_g;
+	sweep_period = sweep_t;
 
 	int sweep_gap = (int)(sweep_g * 1000000);
 
