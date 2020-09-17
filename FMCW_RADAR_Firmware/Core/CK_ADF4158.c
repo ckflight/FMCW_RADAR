@@ -92,9 +92,8 @@ void CK_ADF4158_Init(WAVEFORM_TYPE wf){
 
 	int sweep_gap = (int)(sweep_g * 1000000);
 
-	// 5ms gap burned system.
-	if(sweep_gap > 1500){
-		sweep_gap = 1500;
+	if(sweep_gap > 4000){
+		sweep_gap = 4000;
 	}
 
 	uint32_t sw_start = CK_CONFIGURATION_GetSweepStartFrequency();
