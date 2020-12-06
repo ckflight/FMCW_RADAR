@@ -1,5 +1,7 @@
 # FMCW_RADAR
 
+New version of the hardware is available in Radar 2 folder. Boards are combined in one design with several necessary improvements.
+
 Example screenshots are below
 
 Frequency Modulated Continuous Wave Radar with 26 dBm output power covering around 250m range with a 10dBi gain patch antenna.
@@ -27,7 +29,9 @@ For example:
   
   
 Python Script: I have uploaded an example record file along with python scripts where peaks of the stationary objects can be seen. I will later add real time plot by simply doing record and plotting with 2 different treads simultaneously.  
-  
+
+![Radar 2](https://user-images.githubusercontent.com/61315249/101276899-46bded00-37c1-11eb-818b-c42eb3b57e8a.png)
+
 ![RADAR_RF](https://user-images.githubusercontent.com/61315249/82238636-4acb1000-9940-11ea-8323-65df61ffcf1b.png)
 
 ![RADAR_MCU](https://user-images.githubusercontent.com/61315249/82238631-47d01f80-9940-11ea-91dd-7cf658414dd1.png)
