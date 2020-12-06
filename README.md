@@ -1,6 +1,6 @@
 # FMCW_RADAR
 
-New version of the hardware is available in Radar 2 folder. Boards are combined in one design with several necessary improvements. First screenshot belongs to Radar 2 and others belong to the previous version of the design. I recommend using the lates version since it is more reliable and tested.
+New version of the hardware is available in Radar 2 folder. Boards are combined in one design with several necessary improvements. First screenshot belongs to Radar 2 and others belong to the previous version of the design. I recommend using the Radar 2 since it is more reliable and tested.
 
 Example screenshots are below
 
