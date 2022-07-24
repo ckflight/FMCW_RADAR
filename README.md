@@ -46,6 +46,10 @@
   
  * Python Script: I have uploaded an example record file along with python scripts where the peaks of the stationary objects can be seen. 
 
+### Object Type Detection:
+
+ * Object type detection is done with the similar code that i wrote for my project at the repository https://github.com/ckflight/RADAR_24GHZ_NEURAL_NETWORK
+ 
 ## RADAR 2 Screenshot:
 ![Radar 2](https://user-images.githubusercontent.com/61315249/101276899-46bded00-37c1-11eb-818b-c42eb3b57e8a.png)
 
