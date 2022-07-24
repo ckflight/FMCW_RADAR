@@ -1,11 +1,22 @@
 # FMCW_RADAR
 
 #### Later Update: 
-  New version of the hardware is available in the **"Radar 2"** folder. In **"Radar 2"** design, two separated boards in **"Radar MCU"** and **"Radar RF"** are combined in one design with several necessary improvements. I recommend using the second design since it is more reliable and tested. The reason behind two separate board was to change digital part of the board without changing the RF part of it. However, one united design performs better and have a better temperature cooling control which affect the overall perfomance significantly.
+  New version of the hardware is available in the **Radar 2** folder. In **Radar 2** design, two separated boards in **Radar MCU** and **Radar RF** are combined in one design with several necessary improvements. I recommend using the second design since it is more reliable and tested. The reason behind two separate board was to change digital part of the board without changing the RF part of it. However, one united design performs better and have a better temperature cooling control which affect the overall perfomance significantly.
 
 #### Radar Info:
  * Frequency Modulated Continuous Wave Radar with 26 dBm output power covering around 250 meters range with 10 dBi gain patch antenna (400 meters in theory by using a better ADC with higher sampling rate to match the noise floor of the RF receiver chain).
-
+ 
+ $$ Range(radar) = {\sqrt[4]{Pt * G^2 * \lambda^2 * \sigma \over Pmin * 4\pi^3}} $$
+ 
+  * Receiver chain has LNA, Gain Block and Mixer. The gain block drops the Noise Figure from 7 dB to 2 dB, which doubles the detection range. To determine noise floor, minimum detectable signal is needed. RF receiver chain has thermal noise and it determines the noise floor for Pmin. For Signal to Noise (SNR) ratio of 20 dB is assumed for a good detectable signal then:
+ 
+ $$ Pthermal(watt) = {k * T * B * F} $$
+ 
+ $$ Pthermal(dBm) = {10\log_{10} {kT \over 1mW} + NF + 10\log_{10} BW} $$
+  
+ $$ Pmin(dBm) = {Pthermal(dBm) + 20dB} $$
+ 
+ 
  * Radar, has an auto gain configuration with a digital potentiometer to control intermediate frequency (IF) signal gain at the last stage of the analog amplifier before sampling with ADC.
  
  * -40 dB / Decade Range Compensation Filter is implemented. Closer objects reflect more powerful RF signal which suppresses the signal of the objects at further distance. By amplifying the weaker signals and filtering the closer ones, each frequency band is adjusted to the same amplitude.
@@ -19,8 +30,6 @@
  * ADF4158 Frequency Synthesizer is available due to the nonlinear characteristics of the VCO profile for accurate distance detection. ADF4158 can generate pulses with some gap between each sweep. During this gap samples are packed and buffered over USB.
  
   * STM32F4's DAC has a triangular waveform generation option and it can be used for VCO signal generation as well. Both option are available on board. Check schematic to populate necessary resistor values to use either mode.
- 
- * Receiver chain has LNA, Gain Block and Mixer. The gain block drops the Noise Figure from 7 dB to 2 dB, which doubles the detection range.
  
  * SMA connector has 1 mm pad size, but the 50 Ohm transmission line is 0.342 mm wide. To prevent reflection, cutout is implemented beneath the SMA pad with CST Studio simulation which is also available at my repository https://github.com/ckflight/CST_ADS_MODELS_SIMULATIONS
 
