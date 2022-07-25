@@ -1,7 +1,7 @@
 # Frequency Modulated Continuous Wave Radar Hardware Design and the Firmware
 
 #### Later Update: 
-  New version of the hardware is available in the **Radar 2** folder. In **Radar 2** design, two separated boards in **Radar MCU** and **Radar RF** are combined in one design with several necessary improvements. I recommend using the second design since it is more reliable and tested. The reason behind two separate board was to change digital part of the board without changing the RF part of it. However, one united design performs better and have a better temperature cooling control which affect the overall perfomance significantly.
+  New version of the hardware is available in the **Radar 2** folder. For **Radar 2** design, two separated boards in **Radar MCU** and **Radar RF** folders are brought together with several necessary improvements. I recommend using the second design since it is more reliable and tested. The reason behind two separate board was to change digital part of the board without changing the RF part of it. However, one united design performs better and have a better temperature cooling control which affect the overall perfomance significantly.
 
 #### Radar Info:
  * Frequency Modulated Continuous Wave Radar with 26 dBm output power covering around 250 meters range with 10 dBi gain patch antenna (400 meters in theory by using a better ADC with higher sampling rate to match the noise floor of the RF receiver chain).
