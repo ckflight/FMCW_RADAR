@@ -8,7 +8,7 @@
  
  $$ Range(radar) = {\sqrt[4]{Pt * G^2 * \lambda^2 * \sigma \over Pmin * 4\pi^3}} $$
  
-  * Receiver chain has LNA, Gain Block and Mixer. The gain block drops the Noise Figure from 7 dB to 2 dB, which doubles the detection range. To determine the radar range, minimum detectable signal is needed. RF receiver chain has thermal noise and it determines the noise floor for Pmin. For Signal to Noise (SNR) ratio of 20 dB is assumed for a good detectable signal then:
+  * Receiver chain has LNA, Gain Block and Mixer. The gain block drops the Noise Figure from 7 dB to 2 dB, which doubles the detection range. To determine the radar detection range, minimum detectable signal is needed. RF receiver chain has thermal noise and it determines the noise floor for Pmin. For Signal to Noise (SNR) ratio of 20 dB is assumed for a good detectable signal then:
  
  $$ Pthermal(watt) = {k * T * B * F} $$
  
