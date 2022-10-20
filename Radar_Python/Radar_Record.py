@@ -9,7 +9,8 @@ import binascii
 '''
 
     This code records radar data stream to a text file.
-    Radar data format is: directly data 512(16bit) = 1024 bytes each time.
+    ADC resolution is 12 bits, so 16 is required for each sample.
+    Radar data format is: 512 (16bit) data = 1024 bytes each time.
 
 '''
 
