@@ -7,9 +7,6 @@ import peakutils
 import time
 
 '''
-    This code records radar data stream to a text file.
-    Radar data format is: directly data 512(16bit) = 1024 bytes each time.
-
     READ HERE:
     If i sample 10k in one second then i can plot one fft upto 5KHz once in a second.
     But i need higher update rate for good plot so i can sample 10K in 0.1 sec for example and plot fft upto 5k every 0.1sec
