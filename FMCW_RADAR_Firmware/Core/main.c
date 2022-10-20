@@ -24,8 +24,7 @@
  * so DAC range is from 2072 to 3438.
  * Approximately 1 microsecond timer update is necessary.
  *
- * ADC sample rate will be 250KHz
- * I manually set with clock prescaller and additional cycle number
+ * Hardware parameters are configured by python script at the beginning of radar measurement.
  *
  * Radar range:
  * Distance 		= (c * Ts * Fif) / (2 * B)
