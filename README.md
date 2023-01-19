@@ -1,9 +1,12 @@
 # Frequency Modulated Continuous Wave Radar Hardware Design and the Firmware
 
-#### Later Update: 
+#### Later Update 1: 
   New version of the hardware is available in the **Radar 2** folder. For **Radar 2** design, two separated boards in **Radar MCU** and **Radar RF** folders are brought together with several necessary improvements. I recommend using the second design since it is more reliable and tested. The reason behind two separate board was to change digital part of the board without changing the RF part of it. However, one united design performs better and have a better temperature cooling control which affect the overall perfomance significantly.
   
   ##### Important Power Supply Note: I used switching regulator for 3.3 and 5V power sources to test their effect on the RF performance and oscillation of ripple voltage on OpAmp analog amplifier side. Therefore do not use switching regulator in your design. Change them to LDO type of clean supplies. Or add second LDO stage to the switching regulator unless you want an AM modulated ( 1.4 MHz switching freq. is very f*cking visible ) signal at the OpAmp side. After observing these affects i had to fine tune components which is not necessary if you use a cleaner source !!!
+
+#### Later Update 2: 
+  I have added a new Python script for plotting the radar data with Python Qt5 and Vispy plotting tool which uses GPU instead of CPU. Radar_Plot2.py is the source code. New code plots the time domain and frequency domain data together with scale and restart options. It has thread based approach between Vispy and Qt classes by using DataSource which allows us to manage more data. See first screenshot under Python Script Plots section below.
 
 #### Radar Info:
  * Frequency Modulated Continuous Wave Radar with 26 dBm output power covering around 250 meters range with 10 dBi gain patch antenna (400 meters in theory by using a better ADC with higher sampling rate to match the noise floor of the RF receiver chain).
@@ -63,10 +66,13 @@
 
 ![IMG_20200511_111503](https://user-images.githubusercontent.com/61315249/81540098-d14c8400-9379-11ea-9681-371c4e8f2141.jpg)
 
-## PYTHON Script Plots:
+## Python Script Plots:
+![radar1](https://user-images.githubusercontent.com/61315249/213569989-68518611-2f91-4456-9d74-54cbbb43ceab.png)
+
 ![radar2](https://user-images.githubusercontent.com/61315249/82351877-d8bcfe80-9a05-11ea-9fe4-1619731c1cea.png)
 
 ![radar3](https://user-images.githubusercontent.com/61315249/82351882-d9559500-9a05-11ea-9772-c6e71b53d2af.png)
+
 
 
 
