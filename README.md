@@ -67,7 +67,7 @@
 ![IMG_20200511_111503](https://user-images.githubusercontent.com/61315249/81540098-d14c8400-9379-11ea-9681-371c4e8f2141.jpg)
 
 ## Python Script Plots:
-![radar1](https://user-images.githubusercontent.com/61315249/213569989-68518611-2f91-4456-9d74-54cbbb43ceab.png)
+![radar1](https://user-images.githubusercontent.com/61315249/213574328-27cf320e-f16c-410b-93ad-093b2bd386e1.png)
 
 ![radar2](https://user-images.githubusercontent.com/61315249/82351877-d8bcfe80-9a05-11ea-9fe4-1619731c1cea.png)
 
