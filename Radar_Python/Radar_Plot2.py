@@ -5,6 +5,7 @@ import numpy as np
 import matplotlib.pyplot as mp
 import peakutils
 import time
+from scipy import signal
 
 from PyQt5 import QtWidgets, QtCore
 from vispy.scene import SceneCanvas, visuals
@@ -65,8 +66,9 @@ CANVAS_SIZE = (1200, 700)  # (width, height)
 
 # freq plot variables
 MAX_FREQ_RANGE = SAMPLING_FREQUENCY / 2 # for 933KHz sampling 933K / 2 is max range
-FREQ_RANGE = MAX_FREQ_RANGE / 1
-AVERAGING_NUM = 120
+FREQ_RANGE = MAX_FREQ_RANGE / 2
+AVERAGING_NUM = 100
+MAX_DISTANCE = FREQ_RANGE / hz_per_m
 
 FREQ_NUM_LINE_POINTS = int((FREQ_RANGE / 2)) + 2 - AVERAGING_NUM # this is the array size according to averaging.
 
@@ -77,7 +79,7 @@ FREQ_Y_LIMIT_MIN = 0
 FREQ_Y_LIMIT_MAX = 100
 
 # time plot variables
-TIME_MS = 20
+TIME_MS = 100
 TIME_NUM_LINE_POINTS = NUMBER_OF_SAMPLES * TIME_MS # TIME_MS millisecond range plot
 
 TIME_X_LIMIT_MIN = 0.0
@@ -102,6 +104,10 @@ time_sample_array = []
 
 USB_PLOT = 1
 MICROCARD_PLOT = 0
+REMOVE_CLUTTER = 1
+clutter_counter = 0
+fft_prev_array = np.zeros(FREQ_NUM_LINE_POINTS)
+fft_current_array = np.zeros(FREQ_NUM_LINE_POINTS)
 
 def Moving_Average_Filter(a, n = 1):
 
@@ -178,6 +184,10 @@ class CanvasWrapper:
 
         global line_number_textFile
 
+        number_of_plot_row = 3
+
+        canvas_offset_per_row = CANVAS_SIZE[1] / number_of_plot_row
+
         # Time Plot
         # color array
         print("TIME_NUM_LINE_POINTS",TIME_NUM_LINE_POINTS)
@@ -240,7 +250,7 @@ class CanvasWrapper:
         # add x axis
         xaxis2 = scene.AxisWidget(orientation='top', axis_label='X Axis', axis_font_size=10, axis_label_margin=6,
                                  tick_label_margin=3)
-        xaxis2.height_max = CANVAS_SIZE[1] / 2
+        xaxis2.height_max = CANVAS_SIZE[1] - canvas_offset_per_row
 
         self.grid.add_widget(xaxis2, row=1, col=0)
         xaxis2.link_view(self.view_freq_plot)
@@ -253,6 +263,23 @@ class CanvasWrapper:
         self.grid.add_widget(yaxis2, row=1, col=1)
         yaxis2.link_view(self.view_freq_plot)
 
+        '''
+        global waterfall_time_array
+        # Waterfall plot
+        img_data1, img_data2 = np.meshgrid(waterfall_time_array, freq_plot_data[1])
+        img_data = (img_data2 * np.exp(1j * img_data1)).astype(np.complex64)
+
+        #img_data = waterfall_data()
+
+        # View it with "complex_mode=imaginary"
+        self.view_waterfall_plot = self.grid.add_view(2, 0, bgcolor='#063970')
+        self.waterfall_img = scene.visuals.ComplexImage(img_data, parent=self.view_waterfall_plot.scene, complex_mode="phase")
+        self.view_waterfall_plot.camera = scene.PanZoomCamera(aspect=1)
+        self.view_waterfall_plot.camera.set_range()
+        #self.view_waterfall_plot.camera.set_range(x=(FREQ_X_LIMIT_MIN, FREQ_X_LIMIT_MAX),y=(FREQ_Y_LIMIT_MIN, FREQ_Y_LIMIT_MAX))
+        self.view_waterfall_plot.camera.zoom(1)
+        
+        '''
 
     def set_time_color(self, color):
         print(f"Changing line color to {color}")
@@ -312,6 +339,20 @@ class CanvasWrapper:
         #print("Updating data...")
         self.time_line.set_data(new_data_dict["time"])
         self.freq_line.set_data(new_data_dict["freq"])
+        #self.waterfall_img.set_data(new_data_dict["watefall"])
+
+
+def waterfall_data(size=512, phase_range=(-np.pi, np.pi), mag_range=(0, 10)):
+    """Returns a complex array where X ramps phase and Y ramps magnitude."""
+    p0, p1 = phase_range
+    phase_ramp = np.linspace(p0, p1 - 1 / size, size)
+
+    m0, m1 = mag_range
+    mag_ramp = np.linspace(m1, m0 + 1 / size, size)
+
+    phase_ramp, mag_ramp = np.meshgrid(phase_ramp, mag_ramp)
+
+    return (mag_ramp * np.exp(1j * phase_ramp)).astype(np.complex64)
 
 class MyMainWindow(QtWidgets.QMainWindow):
     closing = QtCore.pyqtSignal()
@@ -321,6 +362,8 @@ class MyMainWindow(QtWidgets.QMainWindow):
 
         self.setFixedWidth(CANVAS_SIZE[0])
         self.setFixedHeight(CANVAS_SIZE[1])
+
+        self.setWindowTitle("FMCW Radar by Cenk Keskin")
 
         central_widget = QtWidgets.QWidget()
         main_layout = QtWidgets.QHBoxLayout()
@@ -361,12 +404,24 @@ class DataSource(QtCore.QObject):
         self._time_domain_data = np.zeros((TIME_NUM_LINE_POINTS, 2), dtype = np.float32) # 2 x NUM_LINE_POINTS array
         self._freq_domain_data = np.zeros((FREQ_NUM_LINE_POINTS, 2), dtype = np.float32) # 2 x NUM_LINE_POINTS array
 
+        '''
+        global waterfall_time_array
+        # Waterfall plot
+        img_data1, img_data2 = np.meshgrid(waterfall_time_array, self._freq_domain_data[1])
+        self._waterfall_data = (img_data2 * np.exp(1j * img_data1)).astype(np.complex64)
+
+        self.waterfall_counter = 0
+        '''
+
     def run_data_creation(self):
 
         print("Run data creation is starting")
         global line_number_textFile
         global record_file
         global is_restart_clicked
+        global clutter_counter
+        global fft_prev_array
+        global fft_current_array
 
         while line_number_textFile < RECORD_COUNTER:
 
@@ -386,6 +441,8 @@ class DataSource(QtCore.QObject):
                 for i in range(0, 11):
                     _line = record_file.readline()
                     print(_line)
+
+                clutter_counter = 0
 
             if self._should_end:
                 print("Data source is told to stop")
@@ -430,13 +487,41 @@ class DataSource(QtCore.QObject):
 
             # Plot Freq Line
             if len(freq_sample_array) == FREQ_RANGE:
+
                 fx, fy = FFT_Calculate(freq_sample_array, 1 / SAMPLING_FREQUENCY, np.hamming, AVERAGING_NUM)
-                self._freq_domain_data[:, 0] = fx
-                self._freq_domain_data[:, 1] = fy
+
+                if REMOVE_CLUTTER:
+
+                    if clutter_counter == 0:
+                        fft_prev_array = fy
+                        clutter_counter = clutter_counter + 1
+                    else:
+                        fft_current_array = fy - fft_prev_array
+
+                        # subtraction makes negative amplitude so i make them zero
+                        fft_current_array = np.where(fft_current_array < 0, 0, fft_current_array)
+
+                        fft_prev_array = fy
+
+                        clutter_counter = clutter_counter + 1
+
+                    if clutter_counter > 0:
+
+                        # magnitude adjustement on fft data
+                        #for i in range(0, 200000):
+                            #if i < 100000:
+                             #   fft_current_array[i] = fft_current_array[i] / 1
+                            #if i >= 100000 and i < 200000:
+                                #fft_current_array[i] = 1 * fft_current_array[i]
+
+                        self._freq_domain_data[:, 0] = fx # freq values from 0 to 1/2 samplig freq
+                        self._freq_domain_data[:, 1] = fft_current_array  # amplitude values of each freq
+
+                else:
+                    self._freq_domain_data[:, 0] = fx  # freq values from 0 to 1/2 samplig freq
+                    self._freq_domain_data[:, 1] = fy # amplitude values of each freq
 
                 freq_sample_array.clear()
-
-                #calculate time until this one is called then sleep for according to the left time
 
             # Plot Time Line
             if len(time_sample_array) == TIME_NUM_LINE_POINTS:
@@ -446,13 +531,12 @@ class DataSource(QtCore.QObject):
 
                 time_sample_array.clear()
 
-                # calculate time until this one is called then sleep for according to the left time
-
             line_number_textFile += 1
 
             data_dict = {
                 "time": self._time_domain_data,
                 "freq": self._freq_domain_data,
+                #"watefall": self._waterfall_data
             }
 
             self.new_data.emit(data_dict)
@@ -470,6 +554,17 @@ class DataSource(QtCore.QObject):
     def stop_data(self):
         print("Data source is quitting...")
         self._should_end = True
+
+def butter_highpass(cutoff, fs, order=5):
+    nyq = 0.5 * fs
+    normal_cutoff = cutoff / nyq
+    b, a = signal.butter(order, normal_cutoff, btype='high', analog=False)
+    return b, a
+
+def butter_highpass_filter(data, cutoff, fs, order=5):
+    b, a = butter_highpass(cutoff, fs, order=order)
+    y = signal.filtfilt(b, a, data)
+    return y
 
 if __name__ == '__main__':
 
