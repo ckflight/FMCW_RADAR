@@ -1,5 +1,7 @@
 # Frequency Modulated Continuous Wave Radar Hardware Design and the Firmware
 
+Refer to the new design's python files for better processing and analysis https://github.com/ckflight/FMCW_RADAR_2
+
 #### Later Update 1: 
   New version of the hardware is available in the **Radar 2** folder. For **Radar 2** design, two separated boards in **Radar MCU** and **Radar RF** folders are brought together with several necessary improvements. I recommend using the second design since it is more reliable and tested. The reason behind two separate board was to change digital part of the board without changing the RF part of it. However, one united design performs better and have a better temperature cooling control which affect the overall perfomance significantly.
   
